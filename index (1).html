@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>curious yern?? 👀</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: #171321;
+  color: #F5F0FF;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 25px;
+}
+
+.screen {
+  width: 100%;
+  max-width: 400px;
+  padding: 30px 20px;
+  border: 1px solid #51416D;
+  border-radius: 20px;
+  background: #211A30;
+}
+
+h1 {
+  color: #D6B8FF;
+  font-size: 30px;
+  line-height: 1.4;
+}
+
+p {
+  color: #E5DDF2;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+button {
+  margin-top: 20px;
+  padding: 14px 22px;
+  border: none;
+  border-radius: 12px;
+  background: #B58AEF;
+  color: #171321;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:active {
+  background: #D6B8FF;
+  transform: scale(0.97);
+}
+
+.small {
+  color: #B9A5D6;
+  font-size: 13px;
+  margin-top: 25px;
+}
+</style>
+</head>
+
+<body>
+
+<div id="screen1" class="screen">
+  <h1>adikaman? 👀</h1>
+  <p>mayda  nim gusto mabaruan ano? haha</p>
+  <button onclick="showScreen(2)">yes or yes? →</button>
+</div>
+
+<div id="screen2" class="screen" style="display: none;">
+  <h1> na crush kagad haak? </h1>
+  <p>click yes kun nacrush ka haak 🤭</p>
+
+  <button onclick="sayYes()">YES </button>
+  <button onclick="sayNo()">NO </button>
+
+  <p id="message"></p>
+</div>
+
+<div id="screen3" class="screen" style="display: none;">
+  <h1>AYIEEE, curious talaga! hiyaaa 😭</h1>
+  <p>HAHAHAHA nahuli rin kita! 🤭</p>
+  <button onclick="showScreen(1)">back to start ↺</button>
+</div>
+<div id="screen4" class="screen" style="display: none;">
+  <p class="small">UMABOT KA DIDI KAY UWAT KAMAN ✦</p>
+  <h1>pero... nag yes kagud? </h1>
+  <p>didn't expect you to get this far...</p>
+  <p>but i'm kinda glad you did. 💜</p>
+  <p>pamati laanay lugod. 
+
+<iframe
+  src="https://open.spotify.com/embed/track/1GqZU8Isnm4Bwx7V3na5tO"
+  width="100%"
+  height="152"
+  style="border-radius: 12px; border: none;"
+  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+  loading="lazy">
+</iframe>
+
+  </p>
+
+  <a href="https://open.spotify.com/"
+     target="_blank"
+     style="color: #D6B8FF;">
+  </a>
+
+  <p class="small">pero maaram kaba nga open tim cam yana?HAHAHAHA tim ka cute.</p>
+  <button onclick="showScreen(1)">back to the beginning ↺</button>
+</div>
+<script>
+function sayYes() {
+  showScreen(4);
+}
+
+let noCount = 0;
+
+function sayNo() {
+  noCount++;
+
+  const messages = [
+    "OUCH BEHH 😭",
+    "YES NAGADLA? 💔",
+    "ARAY KO NAMAN HAHAHA ",
+    "SURE KANA GUD HITU? ",
+    "AGII KASAKIT 😔",
+    "LAST CHANCE NA UHO 😭💜"
+  ];
+
+  document.getElementById("message").innerText =
+    messages[Math.min(noCount - 1, messages.length - 1)];
+}
+function showScreen(n) {
+  document.getElementById("screen1").style.display = "none";
+  document.getElementById("screen2").style.display = "none";
+  document.getElementById("screen3").style.display = "none";
+
+  document.getElementById("screen" + n).style.display = "block";
+}
+</script>
+
+</body>
+</html>
